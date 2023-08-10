@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Ka khel</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: aqua;
+            border: 5px solid black;
+        }
+
+        .box{
+            width: 350px;
+            height: 80px;
+            background-color: blue;
+            border-radius: 10px;
+            margin: 10px;
+            border: 5px solid white;
+            position: relative;
+            animation-name: rightMovement;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            /*animation-delay: 2s;*/
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+
+       
+
+        @keyframes rightMovement {
+            from{
+
+                top: 0;
+                left: 0;
+
+            }
+
+            to{
+
+                top: 0;
+                left: 1050px;
+
+            }
+        }
+
+        .box2{
+            width: 350px;
+            height: 80px;
+            background-color: blue;
+            border-radius: 10px;
+            margin: 10px;
+            border: 5px solid white;
+            position: relative;
+            animation-name: leftMovement;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            /*animation-delay: 2s;*/
+            animation-timing-function: linear;
+            animation-direction: alternate;
+
+        }
+
+
+        @keyframes leftMovement {
+            from{
+
+                top: 600px;
+                left: 1050px;
+
+            }
+
+            to{
+
+                top: 600px;
+                left: 0px;
+
+            }
+        }
+
+        #circle{
+
+
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50px;
+            margin: 10px;
+            border: 5px solid white;
+            position: relative;
+
+            top: 20%;
+            left: 675px;
+            animation-name: circleMovement;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            /*animation-delay: 2s;*/
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+            animation-fill-mode: running;
+
+
+        }
+
+        @keyframes circleMovement {
+           0%{
+            top: 1%;
+            left: 5%;
+
+           }
+
+           30%{
+            top: 5%;
+            left: 90%;
+
+
+           }
+
+           60%{
+            top: 65%;
+            left: 10%;
+
+
+           }
+
+           100%{
+
+            top: 65%;
+            left: 90%;
+
+
+           }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="box">
+
+
+        </div>
+
+        <div class="box2">
+
+
+        </div>
+
+        <div id="circle">
+
+
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>
