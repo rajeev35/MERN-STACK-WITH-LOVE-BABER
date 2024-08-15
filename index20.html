@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mx-auto mt-10 p-6 border shadow-lg max-w-screen-lg">
+    
+    <header class="flex justify-between items-center border-b-2 pb-4">
+        <div>
+            <h1>Logo</h1>
+        </div>
+        <div class="uppercase">
+            <h2>Web Site Name</h2>
+        </div>
+        <nav class="flex space-x-4">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">Login</a>
+            <a href="#" class="hover:underline">Registration</a>
+            <a href="#" class="hover:underline">Catalogue</a>
+            <a href="#" class="hover:underline">Cart</a>
+        </nav>
+    </header>
+
+    <main class="mt-6">
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">CSE</th>
+                    <th class="border px-4 py-2">Book name</th>
+                    <th class="border px-4 py-2">Price</th>
+                    <th class="border px-4 py-2">Quantity</th>
+                    <th class="border px-4 py-2">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">ECE</td>
+                    <td class="border px-4 py-2">Java 2</td>
+                    <td class="border px-4 py-2">$35.5</td>
+                    <td class="border px-4 py-2">2</td>
+                    <td class="border px-4 py-2">$70</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">EEE</td>
+                    <td class="border px-4 py-2">XML bible</td>
+                    <td class="border px-4 py-2">$40.5</td>
+                    <td class="border px-4 py-2">1</td>
+                    <td class="border px-4 py-2">$40.5</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">CIVIL</td>
+                    <td colspan="3" class="border px-4 py-2 text-right">Total amount</td>
+                    <td class="border px-4 py-2">-$130.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+
+</body>
+</html>

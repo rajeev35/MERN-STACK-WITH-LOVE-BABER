@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replicated Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .menu-bar-bg {
+            background-color: #f2a365; /* Close approximation of the orange */
+        }
+        .menu-item-bg {
+            background-color: #fde8e4; /* Lighter shade for menu items */
+        }
+        .border-custom {
+            border-color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="menu-bar-bg p-4 flex justify-between items-center">
+        <div>
+            <span class="font-bold text-xl">Logo</span>
+        </div>
+        <div>
+            <span class="font-bold text-2xl">Website Name</span>
+        </div>
+    </header>
+
+    <!-- Top Navigation -->
+    <nav class="menu-item-bg flex justify-around border-t border-b border-custom p-2">
+        <a href="#" class="font-semibold">Home</a>
+        <a href="#" class="font-semibold">Login</a>
+        <a href="#" class="font-semibold">Registration</a>
+        <a href="#" class="font-semibold">Catalogue</a>
+        <a href="#" class="font-semibold">Cart</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex">
+        <!-- Side Navigation -->
+        <div class="w-1/4">
+            <div class="menu-item-bg border-r border-custom p-4">
+                <div class="mb-4"><a href="#" class="font-semibold">CSE</a></div>
+                <div class="mb-4"><a href="#" class="font-semibold">ECE</a></div>
+                <div class="mb-4"><a href="#" class="font-semibold">EEE</a></div>
+                <div><a href="#" class="font-semibold">CIVIL</a></div>
+            </div>
+        </div>
+        <!-- Login Section -->
+        <div class="w-3/4 p-4">
+            <div>
+                <h2 class="font-bold text-lg mb-4">Login Page</h2>
+                <form>
+                    <div class="mb-4">
+                        <label for="username" class="font-semibold">User Name:</label>
+                        <input type="text" id="username" class="ml-2 border border-custom p-2" />
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="font-semibold">Password:</label>
+                        <input type="password" id="password" class="ml-2 border border-custom p-2" />
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-red-500 text-white font-bold py-2 px-4 rounded mr-4">Submit</button>
+                        <button type="reset" class="bg-white text-red-500 font-bold py-2 px-4 rounded border border-red-500">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
