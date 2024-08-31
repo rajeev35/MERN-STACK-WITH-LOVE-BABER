@@ -1,5 +1,9 @@
 h1{
     text-align: center;
+    text-decoration: wavy red underline;
+    letter-spacing: 5px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h4{
