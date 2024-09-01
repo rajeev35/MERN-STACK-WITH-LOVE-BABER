@@ -1,0 +1,31 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* h3{
+    color: purple;
+} */
+h1,h3{
+    color: rgb(180, 27, 37);
+}
+
+#login{
+    background-color: white;
+
+}
+
+#signup{
+    background-color: rgb(208, 22, 22);
+    color: white;
+}
+.upvote{
+    background-color: greenyellow;
+}
+p a {
+    color: purple;
+    background-color: yellow;
+}
+nav ul li a{
+    color: rgb(0, 89, 255);
+}
