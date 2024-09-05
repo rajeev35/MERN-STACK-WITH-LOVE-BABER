@@ -1,0 +1,16 @@
+div{
+    height: 200px;
+    width: 500px;
+    background-color: aqua;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    
+
+}
+h1{
+    border-width: 2px;
+    border-style: dashed;
+    border-color: purple;
+}
+
