@@ -28,3 +28,26 @@ const add = function(a,b, callback){
 }
 
 add (3,4,callback);
+
+
+var fs  = require('fs');
+var os = require('os');
+
+var user = os.userInfo();
+console.log(user.username);
+
+fs.appendFile('greeting.text', 'Hi' + user.username + '!', () =>{console.log('file is created')});
+
+console.log(os);
+
+
+const notes  = require('./notes.js');
+
+var _ =  require('lodash');
+console.log('SERVER FILE IS AVALIABLE');
+
+var age = notes.age;
+var  result  = notes.addNumber(age+16,10);
+
+console.log(age)
+console.log(+result)
