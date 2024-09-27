@@ -1,0 +1,66 @@
+allen@Rajeevs-MacBook-Pro ~ % mongosh
+Current Mongosh Log ID:	66f66c665662958c10502911
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.1
+Using MongoDB:		6.0.18
+Using Mongosh:		2.3.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-09-27T12:22:48.775+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show databasess
+MongoshInvalidInputError: [COMMON-10001] 'databasess' is not a valid argument for "show".
+test> show databass
+MongoshInvalidInputError: [COMMON-10001] 'databass' is not a valid argument for "show".
+test> show databases
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+mydb    120.00 KiB
+test> use mydb
+switched to db mydb
+mydb> show collection
+MongoshInvalidInputError: [COMMON-10001] 'collection' is not a valid argument for "show".
+mydb> show collectins
+MongoshInvalidInputError: [COMMON-10001] 'collectins' is not a valid argument for "show".
+mydb> show collections
+myUser
+user
+User
+mydb> db.user.find()
+[
+  {
+    _id: ObjectId('66f6682f7701f41c07286251'),
+    id: 1,
+    username: 'Rajeev',
+    age: 23
+  },
+  {
+    _id: ObjectId('66f669147701f41c07286252'),
+    id: 2,
+    username: 'Golu',
+    age: 13
+  }
+]
+mydb> db.user.find({age:{$gt: 20}});
+[
+  {
+    _id: ObjectId('66f6682f7701f41c07286251'),
+    id: 1,
+    username: 'Rajeev',
+    age: 23
+  }
+]
+mydb> db.user.find({age:{$lt: 20}});
+[
+  {
+    _id: ObjectId('66f669147701f41c07286252'),
+    id: 2,
+    username: 'Golu',
+    age: 13
+  }
+]
+mydb> db.user.updateOne({username:'Raajeev'},{$set: {id: 2}});
