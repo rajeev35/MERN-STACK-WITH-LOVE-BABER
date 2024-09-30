@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const db = require('./db')
 
 app.get('/', function (req, res) {
   res.send('Welcome to My Hotel How can I heelp You? We have List of Menus')
@@ -9,23 +10,23 @@ app.get('/', function (req, res) {
 app.get('/chicken', (req,res)=>{
     res.send('Sure sir I would to liker serve Chicken')
 } );
-app.get('/idli', (req,res)=>{
-    var costomize_idli = {
-        name: 'rava idli',
-        size: '10 cm diameter',
-        is_shamber:true,
-        is_chutney:false
-    }
-    res.send(costomize_idli)
-} );
+// app.get('/idli', (req,res)=>{
+//     var costomize_idli = {
+//         name: 'rava idli',
+//         size: '10 cm diameter',
+//         is_shamber:true,
+//         is_chutney:false
+//     }
+//     res.send(costomize_idli)
+// } );
 
 app.listen(3000, ()=>{
     console.log('Listining on Port Number 3000');
 })
 
-app.post('/items',(req,res)=>{
-    res.send('data is saved');
-})
+// app.post('/items',(req,res)=>{
+//     res.send('data is saved');
+// })
 
 
 // const express = require('express')
