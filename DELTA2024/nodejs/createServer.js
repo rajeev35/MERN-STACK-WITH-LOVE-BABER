@@ -23,6 +23,10 @@ app.listen(3000, ()=>{
     console.log('Listining on Port Number 3000');
 })
 
+app.post('/items',(req,res)=>{
+    res.send('data is saved');
+})
+
 
 // const express = require('express')
 // const app = expresss()
