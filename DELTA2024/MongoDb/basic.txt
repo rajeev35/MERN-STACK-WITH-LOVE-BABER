@@ -64,3 +64,47 @@ mydb> db.user.find({age:{$lt: 20}});
   }
 ]
 mydb> db.user.updateOne({username:'Raajeev'},{$set: {id: 2}});
+
+
+mydb> show databasess
+MongoshInvalidInputError: [COMMON-10001] 'databasess' is not a valid argument for "show".
+mydb> show databases
+admin    40.00 KiB
+config   72.00 KiB
+local    72.00 KiB
+mydb    120.00 KiB
+mydb> use mydb
+already on db mydb
+mydb> show collections
+myUser
+user
+User
+mydb> use mydb
+already on db mydb
+mydb> db.user.find()
+[
+  {
+    _id: ObjectId('66f6682f7701f41c07286251'),
+    id: 3,
+    username: 'Rajeev',
+    age: 23
+  },
+  {
+    _id: ObjectId('66f669147701f41c07286252'),
+    id: 2,
+    username: 'Golu',
+    age: 13
+  }
+]
+mydb>  db.user.deleteOne({id: 2});
+{ acknowledged: true, deletedCount: 1 }
+mydb> db.user.find();
+[
+  {
+    _id: ObjectId('66f6682f7701f41c07286251'),
+    id: 3,
+    username: 'Rajeev',
+    age: 23
+  }
+]
+mydb> 
