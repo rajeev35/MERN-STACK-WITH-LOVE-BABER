@@ -2,86 +2,136 @@ const express = require('express')
 const app = express()
 const db = require('./db')
 
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const Person = require('./models/person');
+
 const MenuItem = require('./models/MenuItem');
 
   
 
 app.get('/', function (req, res) {
-  res.send('Welcome to My Hotel How can I heelp You? We have List of Menus')
+  res.send('Welcome to Our Hotel')
 })
 
 
-app.post('/person', async (req,res)=>{
-    try{
-        const data = req.body
-        const newPerson = new Person(data);
-        const response = await newPerson.save();
-        console.log("Data Saved");
-        res.status(200).json(response)
+// app.post('/', async (req,res)=>{
+//     try{
+//         const data = req.body
+//         const newPerson = new Person(data);
+//         const response = await newPerson.save();
+//         console.log("Data Saved");
+//         res.status(200).json(response)
 
-    }catch(err){
-        console.log(err);
-        res.status(500).json({error: "Internal Error"});
+//     }catch(err){
+//         console.log(err);
+//         res.status(500).json({error: "Internal Error"});
 
-    }
-    // newPerson.name = data.name;
-    // newPerson.age = data.age;
-    // newPerson.gender = data.gender;
-    // newPerson.email = data.email;
-    // newPerson.mobile = data.mobile
-    // newPerson.save((error, savedPerson)=>{
-    //     if(error){
-    //         console.log("Error saving person", error);
-    //         res.status(500).json({error: "Internal server errorr"})
-    //     }else{
-    //         console.log("Data save successfully");
-    //         res.status(200).json(savedPerson);
-    //     }
-    // })
-
-
-})
+//     }
+//     // newPerson.name = data.name;
+//     // newPerson.age = data.age;
+//     // newPerson.gender = data.gender;
+//     // newPerson.email = data.email;
+//     // newPerson.mobile = data.mobile
+//     // newPerson.save((error, savedPerson)=>{
+//     //     if(error){
+//     //         console.log("Error saving person", error);
+//     //         res.status(500).json({error: "Internal server errorr"})
+//     //     }else{
+//     //         console.log("Data save successfully");
+//     //         res.status(200).json(savedPerson);
+//     //     }
+//     // })
 
 
-app.get('/person', async (req, res) =>{
-    try{
-
-        const data = await Person.find();
-        console.log('Data find');
-        res.status(200).json(data);
-
-    }catch(err){
-
-        console.log(err);
-        res.status(500).json({error: "Internal Error"});
-
-    }
-})
-
-app.get('/menu', async (req,res)=>{
-
-    try{
-        const data = await MenuItem.find();
-        console.log('Menu data find', data);
-        res.status(200).json(data);
-
-    }catch(err){
-
-        console.log(err);
-        res.status(500).json({error: "Internal Error"});
-
-    }
-
-});
+// })
 
 
-app.get('/chicken', (req,res)=>{
-    res.send('Sure sir I would to liker serve Chicken')
-} );
+// app.get('/', async (req, res) =>{
+//     try{
+
+//         const data = await Person.find();
+//         console.log('Data find');
+//         res.status(200).json(data);
+
+//     }catch(err){
+
+//         console.log(err);
+//         res.status(500).json({error: "Internal Error"});
+
+//     }
+// })
+
+// app.get('/menu', async (req,res)=>{
+
+//     try{
+//         const data = await MenuItem.find();
+//         console.log('Menu data find', data);
+//         res.status(200).json(data);
+
+//     }catch(err){
+
+//         console.log(err);
+//         res.status(500).json({error: "Internal Error"});
+
+//     }
+
+// });
+// app.post('/menu', async (req,res)=>{
+//     try{
+
+//         const data = req.body
+//         const MenuData = new MenuItem(data);
+//         const response = await MenuData.save();
+//         console.log("Data Saved");
+//         res.status(200).json(response)
+
+
+        
+
+//     }catch(err){
+//         console.log(err);
+//         res.status(500).json({error: "Internal Error"});
+//     }
+// })
+
+
+// app.get('/:workType', async (req,res)=>{
+//       try{
+//       const workType  = req.params.workType;  //params is like paramater. 
+//       if(workType == 'chef' || workType == 'manager' || workType == 'waiter'){
+
+//         const response = await Person.find({work: workType});
+//         console.log('Response Fetched');
+//         res.status(200).json(response);
+
+        
+//       }else{
+//         res.status(404).json({error: 'Invalid Work Type'})
+//       }
+
+//       }catch(err){
+//         console.log(err);
+//         res.status(500).json({error: "Internal Error"});
+
+//       }
+// });
+
+
+//import the router file.
+
+const personRoutes = require('./routes/personRoutes');
+app.use('/person', personRoutes);
+
+const menuItemRoutes = require('./routes/menuItemRoutes');
+app.use('/menu',menuItemRoutes);
+
+
+
+// app.get('/chicken', (req,res)=>{
+//     res.send('Sure sir I would to liker serve Chicken')
+// } );
 // app.get('/idli', (req,res)=>{
 //     var costomize_idli = {
 //         name: 'rava idli',
