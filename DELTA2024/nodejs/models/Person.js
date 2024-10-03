@@ -1,6 +1,6 @@
 const { string } = require('i/lib/util');
 const mongoose = require('mongoose');
-//ddefine the person schema 
+//define the person schema 
 
 const personSchema = new mongoose.Schema({
     name:{

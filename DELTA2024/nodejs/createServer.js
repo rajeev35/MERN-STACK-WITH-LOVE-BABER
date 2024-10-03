@@ -62,6 +62,22 @@ app.get('/person', async (req, res) =>{
     }
 })
 
+app.get('/menu', async (req,res)=>{
+
+    try{
+        const data = await MenuItem.find();
+        console.log('Menu data find', data);
+        res.status(200).json(data);
+
+    }catch(err){
+
+        console.log(err);
+        res.status(500).json({error: "Internal Error"});
+
+    }
+
+});
+
 
 app.get('/chicken', (req,res)=>{
     res.send('Sure sir I would to liker serve Chicken')
