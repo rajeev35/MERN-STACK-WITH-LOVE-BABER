@@ -8,10 +8,17 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 const PORT = process.env.PORT || 3000;
 
+//MiddleWare Function
+
+const logRequest = (req, res, next) => {
+  console.log(`[${new Date().toLocaleString()}] Request Made to: ${req.originalUrl}`);
+  next(); // This allows the request to continue after logging
+};
+
 
 const MenuItem = require('./models/MenuItem');
 
-  
+app.use(logRequest);
 
 app.get('/', function (req, res) {
   res.send('Welcome to Our Hotel')
