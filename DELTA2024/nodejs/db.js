@@ -23,11 +23,11 @@
 
 const mongoose = require('mongoose');
 require('dotenv').config();
-//const mongoURL = 'mongodb://127.0.0.1:27017/hotels'; // Replace with your database name
+const mongoURL = 'mongodb://127.0.0.1:27017/hotels'; // Replace with your database name
 //const mongoURL = 'mongodb+srv://rajeev35:Rajeev290@cluster0.idxgm.mongodb.net/'
 //const mongoURL=mongodb+srv://rajeev35:Rajeev290@cluster0.idxgm.mongodb.net/myDatabase?retryWrites=true&w=majority
 
-const mongoURL = process.env.MONGODB_URL;
+//const mongoURL = process.env.MONGODB_URL;
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,  // Corrected option name
     useUnifiedTopology: true

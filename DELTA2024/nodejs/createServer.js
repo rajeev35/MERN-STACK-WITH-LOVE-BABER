@@ -3,6 +3,10 @@ const app = express()
 const db = require('./db')
 require('dotenv').config();
 
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -20,7 +24,31 @@ const MenuItem = require('./models/MenuItem');
 
 app.use(logRequest);
 
-app.get('/', function (req, res) {
+passport.use(LocalStrategy(async (USERNAME, password, done)=>{
+     //Authontication Logic
+
+     try{
+
+      console.log('Receaved creditentials:', USERNAME, password);
+      const user = await Person.findOne({username: USERNAME});
+      if(!user)
+        return done(null, false, {message: 'Incorrect username.'});
+      
+      const isPasswordMatch = user.password === password ? true : false;
+      if(isPasswordMatch){
+        return done(null,user);
+      }else{
+        return done(null, false, {message: 'Incorrect Password.'});
+      }
+
+     }catch(err){
+        return done(err);
+     }
+}))
+
+app.use(passport.initialize());
+
+app.get('/',function (req, res) {
   res.send('Welcome to Our Hotel')
 })
 
@@ -134,6 +162,7 @@ const personRoutes = require('./routes/personRoutes');
 app.use('/person', personRoutes);
 
 const menuItemRoutes = require('./routes/menuItemRoutes');
+const Person = require('./models/person');
 app.use('/menu',menuItemRoutes);
 
 
