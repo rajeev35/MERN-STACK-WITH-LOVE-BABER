@@ -1,5 +1,6 @@
 const { string } = require('i/lib/util');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 //define the person schema 
 
 const personSchema = new mongoose.Schema({
